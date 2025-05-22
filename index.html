@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
+
+        body{
+            background-color:rgb(26, 43, 43);
+            height: 100%;
+            width: 100%;
+        }
+        main{
+             display: flex;
+            justify-content: center;
+            
+        }
+
+    header{
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80%;
+        width: 55%;
+        border-radius: 15px;
+        background-color: white;
+        color: black;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.37);
+        padding: 15px;
+        margin-bottom: 10px;
+       }
+
+       img{
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+       }
+        footer{
+        color: white;     
+        font-style: italic;   
+        }
+    </style>
+    <title>Horários</title>
+</head>
+<body>
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+<main>
+    <div class="container">
+        <div class="box-description">
+            <h2 id="saudation">Bom dia!</h2>
+            <p id="hours">Agora são</p>
+        </div>
+        <div class="box-img">
+            <img src="./img/anoitecendo.jpeg" alt="">
+        </div>
+    </div>
+</main>
+<footer>&copy;Cursoemvideo</footer>
+<script>
+    const body = document.querySelector('body');
+    const saudation = document.getElementById('saudation');
+    const hours = document.getElementById('hours');
+    const img = document.querySelector('img'); 
+    const hour =  new Date().getHours();
+    const minutes = new Date().getMinutes();
+    if(hour < 12 && hour > 6){
+        saudation.innerText = 'Bom dia!';
+        hours.innerText = `Agora são ${hour} horas e ${minutes} minutos`;
+        img.src = './img/manha.jpeg';
+        body.style.background ='#87CEEB';
+
+    } else if(hour >= 12 && hour < 16){
+        saudation.innerText = 'Boa tarde!';
+        hours.innerText = `Agora são ${hour} horas e ${minutes} minutos`;
+        img.src = './img/tarde.jpeg';
+        body.style.background ='#FFA500';
+
+    } else if (hour >= 16 && hour < 18){
+        saudation.innerText = 'Boa noite!';
+        hours.innerText = `Agora são ${hour} horas e ${minutes} minutos`;
+        img.src = './img/anoitecer.webp';
+        body.style.background ='#4B0082';
+
+    } else {
+        saudation.innerText = 'Boa noite!';
+        hours.innerText = `Agora são ${hour} horas e ${minutes} minutos`;
+        img.src = './img/noite.jpeg';
+        body.style.background ='#191970';
+    }  
+    </script>
+</body>
+</html>
