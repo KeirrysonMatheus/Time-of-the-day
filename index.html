@@ -15,7 +15,7 @@
             }
         
             img {
-                width: 90%;
+                width: 70%;
             }
         
             header {
@@ -29,7 +29,7 @@
             }
         
             img {
-                width: 80%;
+                width: 60%;
             }
         }
         
@@ -62,7 +62,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80%;
+    height: 100%;
     width: 80%;
     border-radius: 15px;
     background-color: white;
@@ -75,7 +75,9 @@
 
        img{
         border-radius: 50%;
-        width: 110%;
+        width: 90%;
+        padding: 10px;
+        height: 100%;
         margin: 10px -5px;
        }
         footer{
@@ -108,6 +110,9 @@
     const img = document.querySelector('img'); 
     const hour =  new Date().getHours();
     const minutes = new Date().getMinutes();
+
+
+    document.addEventListener('DOMContentLoaded',  () => {
     if(hour < 12 && hour > 6){
         saudation.innerText = 'Bom dia!';
         hours.innerText = `Agora são ${hour} horas e ${minutes} minutos`;
@@ -132,6 +137,7 @@
         img.src = './img/noite.jpeg';
         body.style.background ='#191970';
     }  
+})
     </script>
 </body>
 </html>
