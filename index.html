@@ -113,7 +113,7 @@
 
 
     document.addEventListener('DOMContentLoaded',  () => {
-    if(hour < 12 && hour > 6){
+    if(hour < 12 && hour >= 6){
         saudation.innerText = 'Bom dia!';
         hours.innerText = `Agora são ${hour} horas e ${minutes} minutos`;
         img.src = './img/manha.jpeg';
